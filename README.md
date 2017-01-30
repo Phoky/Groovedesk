@@ -1,7 +1,7 @@
 # Workive
 Repository for Workive source code
 
-This repository is specific for the source code of the developping website "Workive".
+This repository is specific for the source code of the in development website "Workive".
 
 Project initiated by two brothers, one working in consulting and the second student in developpement.
 
