@@ -1,6 +1,17 @@
 
 /* @font-face kit by Fonts2u (http://www.fonts2u.com) */ @font-face {font-family:"Code-Bold";src:url("CODE_Bold.eot?") format("eot"),url("CODE_Bold.woff") format("woff"),url("CODE_Bold.ttf") format("truetype"),url("CODE_Bold.svg#Code-Bold") format("svg");font-weight:normal;font-style:normal;}
-.active
+.active a
 {
-	color: #06D6A0
+	color: #06D6A0 !important;
+	background-color: transparent !important;
+}
+
+.navbar-default
+{
+	background-color: transparent !important;
+}
+
+.navbar-brand img
+{
+	width: 30%;
 }
