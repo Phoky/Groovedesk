@@ -1,0 +1,9 @@
+{% extends 'project/layaout.html' %}
+
+{% block body %}
+
+{% for tool in tools %}
+	<img src="{{ tool.picturs }}">
+{% endfor %}
+
+{% endblock body %}
