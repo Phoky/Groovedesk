@@ -9,15 +9,20 @@
 		</div>
 		{% endfor %}
 	</div>
-	<div class="resutlSearch">
-		{% for tool in tools %}
+	<div class="resultPushFoward">
+	{% for tool in tools %}
 			{% if tool.pushFowardBoolean == True %}
 				<div class="forwarTool col-md-12">
 					<p class="title">{{ tool.name }}</p>
 					<p class="shorText">{{ tool.shorText }}</p>
 					<p class="cannonical">{{ tool.typeOfTool.name }}</p>
 				</div>
-			{% else %}
+			{% endif %}
+		{% endfor %}
+	</div>
+	<div class="resutlSearch">
+		{% for tool in tools %}
+			{% if tool.pushFowardBoolean == False %}
 				<div class="tool col-md-4">
 					<p class="title">{{ tool.name }}</p>
 					<p class="shorText">{{ tool.shorText }}</p>
@@ -29,6 +34,8 @@
 	<div class="newleter col-md-12">
 		<input type="email" name="email" id="emailNexletter" placeholder="Votre email">
 		<input type="button" name="send" id="sendEmailNewletter" value="S'inscrire">
+		<div class="alert alert-success hide successNewletter"></div>
+		<div class="alert alert-danger hide errorNewletter"></div>
 	</div>
 </div>
 {% endblock body %}

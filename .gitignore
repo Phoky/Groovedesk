@@ -1,5 +1,5 @@
-\groovedesk\__pycache__
-\project\__pycache__
-\project\migrations
+/groovedesk/__pycache__
+/project/__pycache__
+/project/migrations
 media
-db.sqlite3
+/db.sqlite3

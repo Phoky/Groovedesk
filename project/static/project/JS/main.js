@@ -41,16 +41,34 @@ $(document).on('click', '.search', function ()
         {
         	var obj = JSON.parse(response)
         	$('.resutlSearch').html('');
+        	$('.resultPushFoward').html('');
         	if (obj.length > 0)
         	{
         		$.each(obj, function(index, value)
         		{
-	        		$('.resutlSearch').append(
-	        			'<div>'
-	        				+ '<p>' + value.fields.name +  '</p>'
-	        			+ '</div>'
-	        			)
-        		});
+        			if (value.fields.pushFowardBoolean == true)
+        			{
+			        		$('.resultPushFoward').append(
+			        			'<div class="tool col-md-12">'
+			        				+ '<p class="title">pushFowardBoolean</p>'
+			        				+ '<p class="title">' + value.fields.name +  '</p>'
+			        				+ '<p class="shorText">' + value.fields.shorText +  '</p>'
+			        				+ '<p class="cannonical">' + value.fields.cannonical +  '</p>'
+			        			+ '</div>'
+		        			)
+        			}
+        			else
+        			{
+		        		$('.resutlSearch').append(
+		        			'<div class="tool col-md-4">'
+		        				+ '<p class="title">' + value.fields.name +  '</p>'
+		        				+ '<p class="shorText">' + value.fields.shorText +  '</p>'
+		        				+ '<p class="cannonical">' + value.fields.cannonical +  '</p>'
+		        			+ '</div>'
+		        			)
+        			}
+				});
+
         	}
     		else 
     		{
@@ -74,11 +92,33 @@ $(document).on('click', '#sendEmailNewletter', function()
 	        dataType: 'json',
 	        success : function(response) 
 	        {
+	        	if (response.status == 'success')
+	        	{
+			        $('.errorNewletter').addClass('hide');
+	        		$('.successNewletter').html('Merci pour votre inscription');
+	        		$('.successNewletter').removeClass('hide');
+	        	}
+	        	else if(response.status == 'wrong')
+	        	{
+					$('.successNewletter').addClass('hide');
 
+	        		if (response.message == 'User register')
+	        		{
+						$('.errorNewletter').html('Vous etes deja inscrit a notre newsletter');
+			        	$('.errorNewletter').removeClass('hide');
+	        		}
+	        		else
+	        		{
+						$('.errorNewletter').html('Merci de renseigner votre email');
+			        	$('.errorNewletter').removeClass('hide');
+	        		}
+	        	}
 	        },
 	        error : function(xhr,errmsg,err) 
 	        {
 	            console.log(xhr.status + ": " + xhr.responseText);
 	        }
 	    });
-})
+});
+
+$(".alert").show("slow").delay(4000).hide("slow");
