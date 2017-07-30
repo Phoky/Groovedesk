@@ -29,6 +29,6 @@ class Newsletter(models.Model):
 	email = models.EmailField()
 	accepted = models.BooleanField(default=True)
 	def __str__(self):
-		return self.name
+		return self.email
 
 		
