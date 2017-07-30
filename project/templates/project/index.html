@@ -4,7 +4,7 @@
 <div class="container">
 	<div class="multiple-items">
 		{% for type in types %}
-		<div style="background-color: {{type.codeColor}}" data-id="{{type.id}}" class="search">
+		<div style="background-color: {{type.codeColor}}" data-id="{{type.id}}" class="search flex">
 			<p>{{type.canonical}}</p>
 		</div>
 		{% endfor %}

@@ -23,4 +23,11 @@
 .search p
 {
 	color: white;
+	text-align: center;
+	margin: 2%;
+}
+
+.search
+{
+	border-radius: 30px;
 }
